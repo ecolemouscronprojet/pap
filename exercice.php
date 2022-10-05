@@ -22,4 +22,16 @@ echo 'Hello comment ça va ' . $prenom . ' ?<br>';
 echo 'Hello comment ça va ' , $prenom . ' ?<br>';
 
 
+echo '<h1>Exercice 2</h1>';
+
+// echo "j\"ai acheté une maison à Mouscron";
+
+$mot1 = 'acheté';
+$mot2 = 'maison';
+$mot3 = 'une';
+$mot4= 'j\'ai';
+$mot5= 'Mouscron';
+$mot6= 'à';
+
+
 

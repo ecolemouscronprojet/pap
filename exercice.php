@@ -35,9 +35,8 @@ $mot6 = 'à';
 
 
 echo $mot4 . ' ' . $mot1 . ' ' . $mot3 . ' ' . $mot2 . ' ' . $mot6 . ' ' . $mot5;
-
-
-echo 'ma voiture est rouge, ma voiture est noire, ma voiture est verte,
-ma voiture est orange';
+echo '<br>';
+$v1 = 'ma BMW est';
+echo "$v1 rouge, $v1 noire, $v1 verte, $v1 orange, $v1 marron";
 
 

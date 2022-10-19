@@ -58,6 +58,12 @@ echo "<h1>Exercice 4</h1>";
 
 $nb1 = 1;
 
+// echo ($nb1 . $nb1) + $nb1;
+
+echo $nb1. ($nb1+$nb1);
+
+
+
 
 
 

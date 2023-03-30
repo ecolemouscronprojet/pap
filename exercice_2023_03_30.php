@@ -57,3 +57,22 @@ function pluGrand($nbs)
 }
 
 echo pluGrand($nbs);
+
+
+echo '<h1>Exercice n°4</h1>';
+// Ecrivez une fonction qui va retourner ce tableau en inversant les valeurs
+
+
+$nbs = [10, 22, 100, 33, 44, 2, 288, 6, 7];
+
+
+function inverse($nbs)
+{
+    $result = [];
+    for ($i = (count($nbs) - 1); $i >= 0; $i--) {
+        $result[] = $nbs[$i];
+    }
+    return $result;
+}
+
+print_r(inverse($nbs));

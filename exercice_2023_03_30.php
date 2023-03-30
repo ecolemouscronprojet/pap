@@ -44,3 +44,16 @@ echo '<h1>Exercice n°3</h1>';
 //fonction doit retourner le nombre le plus grand du tableau
 
 $nbs = [10, 22, 100, 33, 44, 2, 288, 6, 7];
+
+function pluGrand($nbs)
+{
+    $max = 0;
+    foreach ($nbs as $n) {
+        if ($max < $n) {
+            $max = $n;
+        }
+    }
+    return $max;
+}
+
+echo pluGrand($nbs);

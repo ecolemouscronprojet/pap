@@ -42,6 +42,11 @@ if (isset($_POST['tache']) && empty($_POST['tache']) === false) {
 
 <h1>Formulaire</h1>
 
+MESSAGE 1
+<br>
+MESSAGE 2
+
+
 <p>
     <a href="index.php?supp_all">RESET ALL</a>
 </p>

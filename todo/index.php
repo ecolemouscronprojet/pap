@@ -41,10 +41,16 @@ if (isset($_POST['tache']) && empty($_POST['tache']) === false) {
 ?>
 
 <h1>Formulaire</h1>
+<!-- http://localhost:3000/todo/index.php?affiche=1-->
+<?php 
 
-MESSAGE 1
-<br>
-MESSAGE 2
+if(isset($_GET['affiche']) && $_GET['affiche'] == 1){
+    echo "MESSAGE 1";
+} else if(isset($_GET['affiche']) && $_GET['affiche'] == 2) {
+    echo "MESSAGE 2";
+}
+
+?>
 
 
 <p>

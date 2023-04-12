@@ -6,12 +6,20 @@ session_start();
 
 
 
+if(isset($_GET['supp_all'])) {
+    $_SESSION['todo'] = [];
+    header('location: index.php');
+    exit;
+}
+
 if(isset($_GET['supp_key'])) {
     $key = $_GET['supp_key'];
     unset($_SESSION['todo'][$key]);
     header('location: index.php');
     exit;
 }
+
+
 //condition si la variable $_GET['supp_key'] existe
 //recupere la valeur de la variable $_GET['supp_key']
 // supprimer la ligne du tableau $_SESSION['todo']
@@ -35,7 +43,7 @@ if (isset($_POST['tache']) && empty($_POST['tache']) === false) {
 <h1>Formulaire</h1>
 
 <p>
-    <a href="">RESET ALL</a>
+    <a href="index.php?supp_all">RESET ALL</a>
 </p>
 <div>
     <form action="" method="post">

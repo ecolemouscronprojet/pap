@@ -6,13 +6,13 @@ session_start();
 
 
 
-if(isset($_GET['supp_all'])) {
+if (isset($_GET['supp_all'])) {
     $_SESSION['todo'] = [];
     header('location: index.php');
     exit;
 }
 
-if(isset($_GET['supp_key'])) {
+if (isset($_GET['supp_key'])) {
     $key = $_GET['supp_key'];
     unset($_SESSION['todo'][$key]);
     header('location: index.php');
@@ -42,17 +42,25 @@ if (isset($_POST['tache']) && empty($_POST['tache']) === false) {
 
 <h1>Formulaire</h1>
 <!-- http://localhost:3000/todo/index.php?affiche=1-->
-<?php 
+<?php
 
-if(isset($_GET['affiche']) && $_GET['affiche'] == 1){
+if (isset($_GET['affiche']) && $_GET['affiche'] == 1) {
     echo "MESSAGE 1";
-} else if(isset($_GET['affiche']) && $_GET['affiche'] == 2) {
+} else if (isset($_GET['affiche']) && $_GET['affiche'] == 2) {
     echo "MESSAGE 2";
 }
 
+
+// http://localhost:3000/todo/index.php?age=18
+if (isset($_GET['age'])) {
+    if ($_GET['age'] >= 18) {
+        echo 'vous êtes majeur';
+    } else {
+        echo 'vous êtes mineur';
+
+    }
+}
 ?>
-
-
 <p>
     <a href="index.php?supp_all">RESET ALL</a>
 </p>

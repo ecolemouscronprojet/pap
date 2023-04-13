@@ -16,9 +16,21 @@
 //     echo $f2;
 // }
 
-echo '<h2>Exercice N°2</h2>'
-//?nb1=5&nb2=10
+echo '<h2>Exercice N°2</h2>';
 
-//nb1
 
-//nb2
+if( isset($_GET['nb1'], $_GET['nb2']) ){
+    echo $_GET['nb1'] + $_GET['nb2'];
+}
+
+
+echo '<h2>Exercice N°3</h2>';
+
+//http://localhost:3000/methode_http_get.php?msg=yo&test=10&fruit=pomme
+
+
+echo '<ul>';
+foreach($_GET as $key => $value) {
+    echo "<li><b>$key</b>:  $value</li>";
+}
+echo '</ul>';

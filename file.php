@@ -10,12 +10,13 @@ if(isset($_POST['prenom'])) {
     fwrite($file, $_POST['prenom'] . PHP_EOL);
     fclose($file);
 }
+// récupérer le contenu du fichier
+$file = file_get_contents("prenoms.txt");
+// transformer la chaine de caractères en tableau php
+$fileExplosed = explode(PHP_EOL, $file);
+print_r($fileExplosed)
 
-// else {
-//     $prenoms = fopen("prenoms.txt","a");
-//     fwrite($prenoms, 'toto'. PHP_EOL);
-//     fclose($prenoms);
-// }
+
 
 ?>
 

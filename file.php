@@ -14,9 +14,6 @@ if(isset($_POST['prenom'])) {
 $file = file_get_contents("prenoms.txt");
 // transformer la chaine de caractères en tableau php
 $fileExplosed = explode(PHP_EOL, $file);
-print_r($fileExplosed)
-
-
 
 ?>
 
@@ -26,6 +23,15 @@ print_r($fileExplosed)
     <input type="submit" name="envoyer" value="Envoyer">
 </form>
 
+
+<?php
+
+echo '<ul>';
+foreach($fileExplosed as $p){
+    echo '<li>'.$p.'</li>';
+}
+echo '</ul>';
+?>
 
 
 <!-- Lister les prénoms qui sont dans le fichier

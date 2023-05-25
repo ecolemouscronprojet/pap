@@ -33,9 +33,14 @@ $fileExplosed = explode(PHP_EOL, $file);
 <?php
 
 echo '<ul>';
-foreach($fileExplosed as $p){
+// $key permet de récupérer la position de l'elemennt dans le tableau
+// $p permet de récupérer la valeur
+foreach($fileExplosed as $key => $p){
     if(empty($p) === false){
-        echo '<li>POSITION: ???? PRENOM :'.$p.' <a href="">SUPPRIMER</a></li>';
+        // on crée un lien supprimer où l'on passe
+        // en paramètre supp contenant la position de l'element
+        // que l'on souhaite supprimer
+        echo '<li>'.$p.' <a href="?supp='.$key.'">SUPPRIMER</a></li>';
     }
 }
 echo '</ul>';

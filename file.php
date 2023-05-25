@@ -8,12 +8,14 @@
 // modifier les prénoms dans le fichier
 
 if(isset($_GET["supp"])){
+    // echo '<pre>';
     $index = $_GET["supp"];
-    echo $index;
-    //récupérer le contenu du fichier
-    // le transformer en tableau
-    // retirer dans le tableau l'element à supprimer
-    // convertir le tableau en chaine de carctère
+    $file = file_get_contents('prenoms.txt');
+    // echo $file;
+    $fileExplode = explode(PHP_EOL, $file);
+    unset($fileExplode[$index]);
+    $implodedFile = implode(PHP_EOL, $fileExplode);
+    exit;
     // remplacer tout le contenue du fichier
 }
 

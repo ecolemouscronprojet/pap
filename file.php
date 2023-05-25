@@ -15,8 +15,9 @@ if(isset($_GET["supp"])){
     $fileExplode = explode(PHP_EOL, $file);
     unset($fileExplode[$index]);
     $implodedFile = implode(PHP_EOL, $fileExplode);
+    file_put_contents('prenoms.txt', $implodedFile);
+    header('location: file.php');
     exit;
-    // remplacer tout le contenue du fichier
 }
 
 

@@ -1,7 +1,13 @@
 <?php
 
+// Une application qui permet via un formulaire de pouvoir
+// ajouter des prénoms dans un fichier
+// supprimer des prénoms de ce même fichier
+// faire une recherche dans le fichier
+// intervertire des prénoms dans le fichier
+
 if(file_exists('prenoms.txt') === false){
-    $file = fopen("prenoms.txt","x");
+    $file = fopen("prenoms.txt","a");
     fclose($file);
 } 
 
@@ -14,7 +20,6 @@ if(isset($_POST['prenom'])) {
 $file = file_get_contents("prenoms.txt");
 // transformer la chaine de caractères en tableau php
 $fileExplosed = explode(PHP_EOL, $file);
-
 ?>
 
 
@@ -28,7 +33,9 @@ $fileExplosed = explode(PHP_EOL, $file);
 
 echo '<ul>';
 foreach($fileExplosed as $p){
-    echo '<li>'.$p.'</li>';
+    if(empty($p) === false){
+        echo '<li>'.$p.'</li>';
+    }
 }
 echo '</ul>';
 ?>

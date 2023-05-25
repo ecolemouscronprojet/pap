@@ -7,6 +7,13 @@
 // intervertire des prénoms dans le fichier
 // modifier les prénoms dans le fichier
 
+if(isset($_GET["supp"])){
+    $index = $_GET["supp"];
+    echo $index;
+    // SUPPRIMER !!!!
+}
+
+
 if(file_exists('prenoms.txt') === false){
     $file = fopen("prenoms.txt","a");
     fclose($file);

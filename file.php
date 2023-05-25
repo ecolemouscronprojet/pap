@@ -13,6 +13,7 @@ if(isset($_GET["supp"])){
     //récupérer le contenu du fichier
     // le transformer en tableau
     // retirer dans le tableau l'element à supprimer
+    // convertir le tableau en chaine de carctère
     // remplacer tout le contenue du fichier
 }
 

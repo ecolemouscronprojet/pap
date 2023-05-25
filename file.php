@@ -10,7 +10,10 @@
 if(isset($_GET["supp"])){
     $index = $_GET["supp"];
     echo $index;
-    // SUPPRIMER !!!!
+    //récupérer le contenu du fichier
+    // le transformer en tableau
+    // retirer dans le tableau l'element à supprimer
+    // remplacer tout le contenue du fichier
 }
 
 

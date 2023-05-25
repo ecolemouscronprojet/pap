@@ -5,6 +5,7 @@
 // supprimer des prénoms de ce même fichier
 // faire une recherche dans le fichier
 // intervertire des prénoms dans le fichier
+// modifier les prénoms dans le fichier
 
 if(file_exists('prenoms.txt') === false){
     $file = fopen("prenoms.txt","a");

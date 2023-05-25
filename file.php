@@ -35,7 +35,7 @@ $fileExplosed = explode(PHP_EOL, $file);
 echo '<ul>';
 foreach($fileExplosed as $p){
     if(empty($p) === false){
-        echo '<li>'.$p.' <a href="">SUPPRIMER</a></li>';
+        echo '<li>POSITION: ???? PRENOM :'.$p.' <a href="">SUPPRIMER</a></li>';
     }
 }
 echo '</ul>';

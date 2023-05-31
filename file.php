@@ -52,10 +52,10 @@ $file = file_get_contents("prenoms.txt");
 $fileExplosed = explode(PHP_EOL, $file);
 
 // Si dans l'url on passe le paramètre GET update
+$prenom = '';
 if(isset($_GET['update'])){
     $key = $_GET['update'];
     $prenom = $fileExplosed[$key];
-
 }
 
 // Alimenter votre formulaire avec ce prénom 
@@ -67,7 +67,7 @@ if(isset($_GET['update'])){
 
 
 <form action="" method="post">
-    <input type="text" name="prenom"/>
+    <input type="text" name="prenom" value="<?= $prenom ?>"/>
     <input type="submit" name="envoyer" value="Envoyer">
 </form>
 

@@ -20,6 +20,21 @@ if(isset($_GET["supp"])){
     exit;
 }
 
+// Modifier
+
+// ajouter un lien [Modifer] a côté du bouton supprimer
+
+
+// Quand vous cliquez sur le lien ça doit rediriger
+// sur la même page en remplissant le formulaire avec
+// le prénom de la personne à modifier
+
+// enregistrer le prénom doit se mettre à jour et il ne
+// faut pas qu'il crée un nouveau prénom
+
+
+
+
 
 if(file_exists('prenoms.txt') === false){
     $file = fopen("prenoms.txt","a");
@@ -54,7 +69,11 @@ foreach($fileExplosed as $key => $p){
         // on crée un lien supprimer où l'on passe
         // en paramètre supp contenant la position de l'element
         // que l'on souhaite supprimer
-        echo '<li>'.$p.' <a href="?supp='.$key.'">SUPPRIMER</a></li>';
+        echo "<li>
+            $p  
+            <a href='?supp=$key'>SUPPRIMER</a>&nbsp;
+            <a href='?update=$key'>MODIFIER</a>
+            </li>";
     }
 }
 echo '</ul>';

@@ -53,9 +53,8 @@ $fileExplosed = explode(PHP_EOL, $file);
 
 // Si dans l'url on passe le paramètre GET update
 if(isset($_GET['update'])){
-    $update = $_GET['update'];
-    //récupérer le bon enregistrement (le bon prénom)
-    
+    $key = $_GET['update'];
+    $prenom = $fileExplosed[$key];
 }
 
 

@@ -42,9 +42,20 @@ if(file_exists('prenoms.txt') === false){
 } 
 
 if(isset($_POST['prenom'])) {
-    $file = fopen("prenoms.txt","a");
-    fwrite($file, $_POST['prenom'] . PHP_EOL);
-    fclose($file);
+    //si on est en mode edition(update dans l'url)
+        //on ouvre le fichier
+        //on le convertit en tableau
+        //on recupere la position de l'element a mettre à 
+        //jour dans le tableau (update)
+        // on remplace la valeur de l'element que l'on souhaite
+        // mettre à jour dans le tableau
+        // on convertit le tableau en chaine
+        // on l'enregistre dans le fichier
+
+    // si je suis en ajout
+        $file = fopen("prenoms.txt","a");
+        fwrite($file, $_POST['prenom'] . PHP_EOL);
+        fclose($file);
 }
 // récupérer le contenu du fichier
 $file = file_get_contents("prenoms.txt");

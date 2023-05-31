@@ -50,6 +50,23 @@ if(isset($_POST['prenom'])) {
 $file = file_get_contents("prenoms.txt");
 // transformer la chaine de caractères en tableau php
 $fileExplosed = explode(PHP_EOL, $file);
+
+// Si dans l'url on passe le paramètre GET update
+if(isset($_GET['update'])){
+    $update = $_GET['update'];
+    //récupérer le bon enregistrement (le bon prénom)
+    
+}
+
+
+
+// alors récupérer sa valeur
+
+// 
+
+// Alimenter votre formulaire avec ce prénom
+
+
 ?>
 
 

@@ -55,15 +55,12 @@ $fileExplosed = explode(PHP_EOL, $file);
 if(isset($_GET['update'])){
     $key = $_GET['update'];
     $prenom = $fileExplosed[$key];
+
 }
 
+// Alimenter votre formulaire avec ce prénom 
 
 
-// alors récupérer sa valeur
-
-// 
-
-// Alimenter votre formulaire avec ce prénom
 
 
 ?>

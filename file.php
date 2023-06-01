@@ -15,16 +15,18 @@ if(file_exists('prenoms.txt') === false){
 
 if(isset($_POST['prenom'])) {
     if(isset($_GET['update'])) {
-        echo 'EDITION'; exit;
-        //on ouvre le fichier
-        //on le convertit en tableau
-        //on recupere la position de l'element a mettre à 
-        //jour dans le tableau (update)
-        // on remplace la valeur de l'element que l'on souhaite
-        // mettre à jour dans le tableau
-        // on convertit le tableau en chaine
-        // on l'enregistre dans le fichier
-    
+        echo 'EDITION';
+        // Ouvrir le fichier et récupérer son contenu
+        $file = file_get_contents('prenoms.txt');
+        // convertir le contenu en tableau
+        $fileExplosed = explode(PHP_EOL, $file);
+        // récupérer la position de l'element à mettre à jour 
+        // dans le tableau
+        $key = $_GET['update'];
+        // remplacer dans le tableau l'ancien prénom par le nouveau
+        $fileExplosed[$key] = $_POST['prenom'];
+        // convertir le tableau en chaine
+        // enregistrer le resultat dans le fichier
     } else {
         $file = fopen("prenoms.txt","a");
         fwrite($file, $_POST['prenom'] . PHP_EOL);

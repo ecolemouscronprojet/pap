@@ -7,6 +7,32 @@
 // intervertire des prénoms dans le fichier
 // modifier les prénoms dans le fichier
 
+// créer le fichier s'il n'existe pas
+if(file_exists('prenoms.txt') === false){
+    $file = fopen("prenoms.txt","a");
+    fclose($file);
+} 
+
+if(isset($_POST['prenom'])) {
+    if(isset($_GET['update'])) {
+        echo 'EDITION'; exit;
+        //on ouvre le fichier
+        //on le convertit en tableau
+        //on recupere la position de l'element a mettre à 
+        //jour dans le tableau (update)
+        // on remplace la valeur de l'element que l'on souhaite
+        // mettre à jour dans le tableau
+        // on convertit le tableau en chaine
+        // on l'enregistre dans le fichier
+    
+    } else {
+        $file = fopen("prenoms.txt","a");
+        fwrite($file, $_POST['prenom'] . PHP_EOL);
+        fclose($file);
+    }
+}
+
+
 if(isset($_GET["supp"])){
     // echo '<pre>';
     $index = $_GET["supp"];
@@ -32,31 +58,6 @@ if(isset($_GET["supp"])){
 // enregistrer le prénom doit se mettre à jour et il ne
 // faut pas qu'il crée un nouveau prénom
 
-
-
-
-
-if(file_exists('prenoms.txt') === false){
-    $file = fopen("prenoms.txt","a");
-    fclose($file);
-} 
-
-if(isset($_POST['prenom'])) {
-    //si on est en mode edition(update dans l'url)
-        //on ouvre le fichier
-        //on le convertit en tableau
-        //on recupere la position de l'element a mettre à 
-        //jour dans le tableau (update)
-        // on remplace la valeur de l'element que l'on souhaite
-        // mettre à jour dans le tableau
-        // on convertit le tableau en chaine
-        // on l'enregistre dans le fichier
-
-    // si je suis en ajout
-        $file = fopen("prenoms.txt","a");
-        fwrite($file, $_POST['prenom'] . PHP_EOL);
-        fclose($file);
-}
 // récupérer le contenu du fichier
 $file = file_get_contents("prenoms.txt");
 // transformer la chaine de caractères en tableau php

@@ -15,7 +15,6 @@ if(file_exists('prenoms.txt') === false){
 
 if(isset($_POST['prenom'])) {
     if(isset($_GET['update'])) {
-        echo 'EDITION';
         // Ouvrir le fichier et récupérer son contenu
         $file = file_get_contents('prenoms.txt');
         // convertir le contenu en tableau
@@ -26,7 +25,13 @@ if(isset($_POST['prenom'])) {
         // remplacer dans le tableau l'ancien prénom par le nouveau
         $fileExplosed[$key] = $_POST['prenom'];
         // convertir le tableau en chaine
+        $implodedFile = implode(PHP_EOL, $fileExplosed);
         // enregistrer le resultat dans le fichier
+        file_put_contents('prenoms.txt', $implodedFile);
+        // rediriger sur la page sans les paramètres
+        header('location: file.php');
+        // on exit pour ne pas executer le reste de la page
+        exit;
     } else {
         $file = fopen("prenoms.txt","a");
         fwrite($file, $_POST['prenom'] . PHP_EOL);

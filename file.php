@@ -41,13 +41,16 @@ if(isset($_POST['prenom'])) {
 
 
 if(isset($_GET["supp"])){
-    // echo '<pre>';
+    // récupération de la position de l'element 
+    // à supprimer dans le tableau
     $index = $_GET["supp"];
+    // on récupère le contenu du fichier
     $file = file_get_contents('prenoms.txt');
-    // echo $file;
-    $fileExplode = explode(PHP_EOL, $file);
-    unset($fileExplode[$index]);
-    $implodedFile = implode(PHP_EOL, $fileExplode);
+    // on convertit le contenu du fichier en tableau
+    $fileExplosed = explode(PHP_EOL, $file);
+    // on supprime l'element du tableau à supprim
+    unset($fileExplosed[$index]);
+    $implodedFile = implode(PHP_EOL, $fileExplosed);
     file_put_contents('prenoms.txt', $implodedFile);
     header('location: file.php');
     exit;

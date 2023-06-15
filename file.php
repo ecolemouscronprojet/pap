@@ -13,6 +13,37 @@ if(file_exists('prenoms.txt') === false){
     fclose($file);
 } 
 
+
+if(isset($_GET['action'], $_GET['key'])){
+    $action = $_GET['action'];
+    if($action === 'up') {
+        // 1. récuperer le contenu du fichier
+        $file = file_get_contents('prenoms.txt');
+        // 2. convertir ce contenu en tableau
+        $fileExplosed = explode(PHP_EOL, $file);
+        $key = $_GET['key'];
+
+        // 3. venir switcher l'element vers le haut 
+        // du tableau 
+        $tmp1 = $fileExplosed[$key];
+        $tmp2 = $fileExplosed[$key-1];
+        $fileExplosed[$key] = $tmp2;
+        $fileExplosed[$key-1] = $tmp1;
+      
+        // convertir le tableau en chaine
+        $implodedFile = implode(PHP_EOL, $fileExplosed);
+        // enregistrer le resultat dans le fichier
+        file_put_contents('prenoms.txt', $implodedFile);
+        // rediriger sur la page sans les paramètres
+        header('location: file.php');
+        exit;
+    } else if($action === 'down') {
+        echo 'ACTION DOWN';
+        exit;
+    }
+}
+
+
 if(isset($_POST['prenom'])) {
     if(isset($_GET['update'])) {
         // Ouvrir le fichier et récupérer son contenu
@@ -105,6 +136,8 @@ foreach($fileExplosed as $key => $p){
         // en paramètre supp contenant la position de l'element
         // que l'on souhaite supprimer
         echo "<li>
+            <a href='?action=up&key=$key' style='text-decoration: none;font-weight: bold;color: blue'>&#8593;</a>
+            <a href='?action=down&key=$key' style='text-decoration: none;font-weight: bold;color: blue'>&#8595;</a>
             $p  
             <a href='?supp=$key'>SUPPRIMER</a>&nbsp;
             <a href='?update=$key'>MODIFIER</a>

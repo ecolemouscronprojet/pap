@@ -1,5 +1,37 @@
 <?php
 
+// function switchPrenom($key, $action) {
+//     // 1. récuperer le contenu du fichier
+//     $file = file_get_contents('prenoms.txt');
+//     // 2. convertir ce contenu en tableau
+//     $fileExplosed = explode(PHP_EOL, $file);
+
+//     // 3. venir switcher l'element vers le bas 
+//     // du tableau 
+    
+//     if($action === 'down'){
+//         $switch = 1;
+//     } else if($action === 'up'){
+//         $switch = -1;
+//     } else {
+//         $switch = 0;
+//     }
+    
+    
+//     $tmp1 = $fileExplosed[$key];
+//     $tmp2 = $fileExplosed[$key+$switch];
+//     $fileExplosed[$key] = $tmp2;
+//     $fileExplosed[$key+$switch] = $tmp1;
+
+//     // convertir le tableau en chaine
+//     $implodedFile = implode(PHP_EOL, $fileExplosed);
+//     // enregistrer le resultat dans le fichier
+//     file_put_contents('prenoms.txt', $implodedFile);
+//     // rediriger sur la page sans les paramètres
+//     header('location: file.php');
+//     exit;
+// }
+
 // Une application qui permet via un formulaire de pouvoir
 // ajouter des prénoms dans un fichier
 // supprimer des prénoms de ce même fichier

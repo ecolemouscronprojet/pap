@@ -177,11 +177,14 @@ if(isset($_GET['update'])){
 echo '<ul>';
 // $key permet de récupérer la position de l'elemennt dans le tableau
 // $p permet de récupérer la valeur
+
+$keyLastElement = count($fileExplosed) -1;
 foreach($fileExplosed as $key => $p){
     if(empty($p) === false){
         // on crée un lien supprimer où l'on passe
         // en paramètre supp contenant la position de l'element
         // que l'on souhaite supprimer
+
         echo "<li>
             <a href='?action=up&key=$key' style='text-decoration: none;font-weight: bold;color: blue'>&#8593;</a>
             <a href='?action=down&key=$key' style='text-decoration: none;font-weight: bold;color: blue'>&#8595;</a>

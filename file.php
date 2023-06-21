@@ -8,7 +8,7 @@
 // modifier les prénoms dans le fichier
 
 // créer le fichier s'il n'existe pas
-if(file_exists('prenoms.txt') === false){
+if(file_exists('prenoms.txt') === false) {
     $file = fopen("prenoms.txt","a");
     fclose($file);
 } 
@@ -38,7 +38,25 @@ if(isset($_GET['action'], $_GET['key'])){
         header('location: file.php');
         exit;
     } else if($action === 'down') {
-        echo 'ACTION DOWN';
+        // 1. récuperer le contenu du fichier
+        $file = file_get_contents('prenoms.txt');
+        // 2. convertir ce contenu en tableau
+        $fileExplosed = explode(PHP_EOL, $file);
+        $key = $_GET['key'];
+
+        // 3. venir switcher l'element vers le bas 
+        // du tableau 
+        $tmp1 = $fileExplosed[$key];
+        $tmp2 = $fileExplosed[$key+1];
+        $fileExplosed[$key] = $tmp2;
+        $fileExplosed[$key+1] = $tmp1;
+
+        // convertir le tableau en chaine
+        $implodedFile = implode(PHP_EOL, $fileExplosed);
+        // enregistrer le resultat dans le fichier
+        file_put_contents('prenoms.txt', $implodedFile);
+        // rediriger sur la page sans les paramètres
+        header('location: file.php');
         exit;
     }
 }
@@ -112,9 +130,6 @@ if(isset($_GET['update'])){
 }
 
 // Alimenter votre formulaire avec ce prénom 
-
-
-
 
 ?>
 
